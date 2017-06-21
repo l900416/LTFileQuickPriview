@@ -1,0 +1,12 @@
+PODS:
+  - LTFileQuickPreview (0.0.1)
+
+DEPENDENCIES:
+  - LTFileQuickPreview
+
+SPEC CHECKSUMS:
+  LTFileQuickPreview: e50fd53f1c618a77bcc90ed861502b55a236c1b5
+
+PODFILE CHECKSUM: 787a8b018a8d9b526eda5664e515ff234aa16b15
+
+COCOAPODS: 1.1.0.rc.3

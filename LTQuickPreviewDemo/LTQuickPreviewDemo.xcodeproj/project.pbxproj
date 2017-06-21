@@ -13,13 +13,13 @@
 		2797ABDD1EFAADC3005A43FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797ABDB1EFAADC3005A43FB /* Main.storyboard */; };
 		2797ABDF1EFAADC3005A43FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2797ABDE1EFAADC3005A43FB /* Assets.xcassets */; };
 		2797ABE21EFAADC3005A43FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797ABE01EFAADC3005A43FB /* LaunchScreen.storyboard */; };
-		2797ABF11EFAAE10005A43FB /* LTQuckPreviewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797ABEB1EFAAE10005A43FB /* LTQuckPreviewViewModel.m */; };
-		2797ABF21EFAAE10005A43FB /* LTQuickPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797ABED1EFAAE10005A43FB /* LTQuickPreviewViewController.m */; };
 		2797ABF31EFAAE10005A43FB /* bunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2797ABEF1EFAAE10005A43FB /* bunny.mp4 */; };
 		2797ABF41EFAAE10005A43FB /* Getting-Started-with-iBeacon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2797ABF01EFAAE10005A43FB /* Getting-Started-with-iBeacon.pdf */; };
+		8D35BBBCC1BADC6BE3D43155 /* Pods_LTQuickPreviewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1AC36E83FC3BB590F1133 /* Pods_LTQuickPreviewDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141CD7B786FE53779EDDFE35 /* Pods-LTQuickPreviewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTQuickPreviewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTQuickPreviewDemo/Pods-LTQuickPreviewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2797ABCF1EFAADC3005A43FB /* LTQuickPreviewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTQuickPreviewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2797ABD31EFAADC3005A43FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2797ABD51EFAADC3005A43FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,12 +30,10 @@
 		2797ABDE1EFAADC3005A43FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2797ABE11EFAADC3005A43FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2797ABE31EFAADC3005A43FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2797ABEA1EFAAE10005A43FB /* LTQuckPreviewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTQuckPreviewViewModel.h; sourceTree = "<group>"; };
-		2797ABEB1EFAAE10005A43FB /* LTQuckPreviewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTQuckPreviewViewModel.m; sourceTree = "<group>"; };
-		2797ABEC1EFAAE10005A43FB /* LTQuickPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTQuickPreviewViewController.h; sourceTree = "<group>"; };
-		2797ABED1EFAAE10005A43FB /* LTQuickPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTQuickPreviewViewController.m; sourceTree = "<group>"; };
 		2797ABEF1EFAAE10005A43FB /* bunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bunny.mp4; sourceTree = "<group>"; };
 		2797ABF01EFAAE10005A43FB /* Getting-Started-with-iBeacon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Getting-Started-with-iBeacon.pdf"; sourceTree = "<group>"; };
+		DE59F04394206EB85F2F5BC8 /* Pods-LTQuickPreviewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTQuickPreviewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTQuickPreviewDemo/Pods-LTQuickPreviewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F5A1AC36E83FC3BB590F1133 /* Pods_LTQuickPreviewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTQuickPreviewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D35BBBCC1BADC6BE3D43155 /* Pods_LTQuickPreviewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +53,8 @@
 			children = (
 				2797ABD11EFAADC3005A43FB /* LTQuickPreviewDemo */,
 				2797ABD01EFAADC3005A43FB /* Products */,
+				F55515E45FB4888C29703F66 /* Pods */,
+				2DDE16FE7E30395979088E63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,7 +69,6 @@
 		2797ABD11EFAADC3005A43FB /* LTQuickPreviewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2797ABE91EFAAE10005A43FB /* LTQuickPreview */,
 				2797ABEE1EFAAE10005A43FB /* Resource */,
 				2797ABD51EFAADC3005A43FB /* AppDelegate.h */,
 				2797ABD61EFAADC3005A43FB /* AppDelegate.m */,
@@ -91,17 +91,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2797ABE91EFAAE10005A43FB /* LTQuickPreview */ = {
-			isa = PBXGroup;
-			children = (
-				2797ABEA1EFAAE10005A43FB /* LTQuckPreviewViewModel.h */,
-				2797ABEB1EFAAE10005A43FB /* LTQuckPreviewViewModel.m */,
-				2797ABEC1EFAAE10005A43FB /* LTQuickPreviewViewController.h */,
-				2797ABED1EFAAE10005A43FB /* LTQuickPreviewViewController.m */,
-			);
-			path = LTQuickPreview;
-			sourceTree = "<group>";
-		};
 		2797ABEE1EFAAE10005A43FB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +100,23 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		2DDE16FE7E30395979088E63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1AC36E83FC3BB590F1133 /* Pods_LTQuickPreviewDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F55515E45FB4888C29703F66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				141CD7B786FE53779EDDFE35 /* Pods-LTQuickPreviewDemo.debug.xcconfig */,
+				DE59F04394206EB85F2F5BC8 /* Pods-LTQuickPreviewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2797ABE61EFAADC3005A43FB /* Build configuration list for PBXNativeTarget "LTQuickPreviewDemo" */;
 			buildPhases = (
+				35D94EE4E7B610F6636624DB /* [CP] Check Pods Manifest.lock */,
 				2797ABCB1EFAADC3005A43FB /* Sources */,
 				2797ABCC1EFAADC3005A43FB /* Frameworks */,
 				2797ABCD1EFAADC3005A43FB /* Resources */,
+				2848408DA19245CEECA4C640 /* [CP] Embed Pods Frameworks */,
+				34924379572AA165733F3C42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,16 +188,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2848408DA19245CEECA4C640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTQuickPreviewDemo/Pods-LTQuickPreviewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34924379572AA165733F3C42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTQuickPreviewDemo/Pods-LTQuickPreviewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35D94EE4E7B610F6636624DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2797ABCB1EFAADC3005A43FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2797ABDA1EFAADC3005A43FB /* ViewController.m in Sources */,
-				2797ABF11EFAAE10005A43FB /* LTQuckPreviewViewModel.m in Sources */,
 				2797ABD71EFAADC3005A43FB /* AppDelegate.m in Sources */,
 				2797ABD41EFAADC3005A43FB /* main.m in Sources */,
-				2797ABF21EFAAE10005A43FB /* LTQuickPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,9 +359,11 @@
 		};
 		2797ABE71EFAADC3005A43FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141CD7B786FE53779EDDFE35 /* Pods-LTQuickPreviewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LTQuickPreviewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liangtong.LTQuickPreviewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -315,9 +372,11 @@
 		};
 		2797ABE81EFAADC3005A43FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE59F04394206EB85F2F5BC8 /* Pods-LTQuickPreviewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LTQuickPreviewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liangtong.LTQuickPreviewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -343,6 +402,7 @@
 				2797ABE81EFAADC3005A43FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

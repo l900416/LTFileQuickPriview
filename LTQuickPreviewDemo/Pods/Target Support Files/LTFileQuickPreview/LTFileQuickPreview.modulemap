@@ -1,0 +1,6 @@
+framework module LTFileQuickPreview {
+  umbrella header "LTFileQuickPreview-umbrella.h"
+
+  export *
+  module * { export * }
+}
