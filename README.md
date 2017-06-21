@@ -16,6 +16,7 @@ LTFileQuickPreview is available in CocoaPods, specify it in your *Podfile*:
 Easy to use, all you need to do is: 
 
 > init the viewController with file dataSource.
+
 > push or show the viewController.
 
 That's all.
