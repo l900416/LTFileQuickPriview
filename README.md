@@ -1,11 +1,17 @@
 # LTFileQuickPriview
-Support both online and local document &amp; Multi-Media File Preview. Very easy to use. 
+Support both online and local document &amp; Multi-Media File Preview. Easy to use. 
 
 ![](https://github.com/l900416/LTFileQuickPriview/blob/master/Screenshots/1.png)
 
-* QuickLook Type File    
-* Web Page    
-* Multi-Media File   
+## Features   
+* Support QuickLook Type File    
+* Support Web Page    
+* Support Multi-Media File   
+* Custom UI
+
+## Upcoming features    
+* File cache
+
 
 ## Installation with CocoaPods
 
