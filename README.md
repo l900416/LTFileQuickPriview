@@ -7,10 +7,11 @@ Support both online and local document &amp; Multi-Media File Preview. Easy to u
 * Support QuickLook Type File    
 * Support Web Page    
 * Support Multi-Media File   
-* Custom UI
+* Custom UI   
+* File cache
 
 ## Upcoming features    
-* File cache
+* to be continue
 
 
 ## Installation with CocoaPods
@@ -36,7 +37,7 @@ That's all.
 ```Objective-C
     //init
     LTQuickPreviewViewController* quickPreviewVC = [LTQuickPreviewViewController 
-                                                        instanceWithFilePath:filePath];
+                                                        instanceWithURL:url];
 
     //push or show
     [self.navigationController pushViewController:quickPreviewVC animated:true];
