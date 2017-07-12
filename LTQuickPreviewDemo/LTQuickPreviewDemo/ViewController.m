@@ -28,38 +28,39 @@
     self.title = @"LTQuickPreview";
 }
 - (IBAction)quickPreviewWebURL:(UIButton *)sender {
-    LTQuickPreviewViewController* quickVC = [LTQuickPreviewViewController instanceWithFileURL:[NSURL URLWithString:@"https://www.github.com/"]];
-    quickVC.progressTintColor = [UIColor redColor];
-    [self.navigationController pushViewController:quickVC animated:true];
+    [self.navigationController pushViewController:[self filePreviewVCWithURL:[NSURL URLWithString:@"https://www.github.com/"]] animated:true];
 }
 
 -(IBAction)quickPreviewLocalQuickLook:(id)sender{
     NSURL* localPath = [[NSBundle mainBundle] URLForResource:@"Getting-Started-with-iBeacon" withExtension:@"pdf"];
-    LTQuickPreviewViewController* quickVC = [LTQuickPreviewViewController instanceWithFilePath:localPath];
-    [self.navigationController pushViewController:quickVC animated:true];
+    [self.navigationController pushViewController:[self filePreviewVCWithURL:localPath] animated:true];
 }
 - (IBAction)quickPreviewLocalVideo:(UIButton *)sender {
     NSURL* localPath = [[NSBundle mainBundle] URLForResource:@"bunny" withExtension:@"mp4"];
-    LTQuickPreviewViewController* quickVC = [LTQuickPreviewViewController instanceWithFilePath:localPath];
-    [self.navigationController pushViewController:quickVC animated:true];
+    [self.navigationController pushViewController:[self filePreviewVCWithURL:localPath] animated:true];
 }
 
 -(IBAction)quickPreviewWebQuickLook:(id)sender{
     NSURL* fileURL = [NSURL URLWithString:@"https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/LocationAwarenessPG/Art/sphere_to_cylinder.jpg"];
-    LTQuickPreviewViewController* quickVC = [LTQuickPreviewViewController instanceWithFileURL:fileURL];
-    [self.navigationController pushViewController:quickVC animated:true];
+    [self.navigationController pushViewController:[self filePreviewVCWithURL:fileURL] animated:true];
+}
+-(IBAction)quickPreviewWebQuickLookWithoutCache:(id)sender{
+    NSURL* fileURL = [NSURL URLWithString:@"https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/remote_notif_multiple_2x.png"];
+    LTQuickPreviewViewController* filePreviewVC = [self filePreviewVCWithURL:fileURL];
+    filePreviewVC.useCache = NO;
+    [self.navigationController pushViewController:filePreviewVC animated:true];
 }
 
 - (IBAction)quickPreviewWebVideo:(UIButton *)sender {
     NSURL* fileURL = [NSURL URLWithString:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
-    LTQuickPreviewViewController* quickVC = [LTQuickPreviewViewController instanceWithFileURL:fileURL];
-    [self.navigationController pushViewController:quickVC animated:true];
+    [self.navigationController pushViewController:[self filePreviewVCWithURL:fileURL] animated:true];
 
 }
-- (IBAction)quickPreviewWithoutURL:(UIButton *)sender {
-    LTQuickPreviewViewController* quickVC = [[LTQuickPreviewViewController alloc] init];
-    [self.navigationController pushViewController:quickVC animated:true];
+
+-(LTQuickPreviewViewController*)filePreviewVCWithURL:(NSURL*)url{
+    return [LTQuickPreviewViewController instanceWithURL:url];
 }
+
 
 
 - (void)didReceiveMemoryWarning {

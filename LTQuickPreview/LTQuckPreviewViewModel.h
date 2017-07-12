@@ -16,11 +16,23 @@ typedef NS_ENUM(NSInteger, LTQuickPreviewFileType){
     LTQuickPreviewFileTypeWeb,          //打开网页
 };
 
+
+//use file cache
+@property (nonatomic, assign) BOOL useCache;
+
+/**
+ *  check file type with url
+ **/
 - (LTQuickPreviewFileType)fileTypeWithURL:(NSURL*)url;
 
-
+/**
+ *  file local path by weburl
+ **/
 -(NSURL*)filePathWithWebURL:(NSURL*)webURL;
 
+/**
+ *  download file
+ **/
 - (void)downloadFile:(NSURL*)fileURL
             progress:(void (^)(float progress)) downloadProgress
      destinationPath:(NSURL * (^)())destinationPath

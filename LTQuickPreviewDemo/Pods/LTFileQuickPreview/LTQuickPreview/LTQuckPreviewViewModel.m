@@ -55,8 +55,6 @@
             progress:(void (^)(float progress)) downloadProgress
      destinationPath:(NSURL * (^)())destinationPath
             complete:(void (^)(NSURL* filePath,NSError *error))complete{
-    _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDownloadTask* downloadTask = [self.session downloadTaskWithURL:fileURL];
     
     self.downloadProgress = downloadProgress;
     self.downloadComplete = complete;
@@ -65,11 +63,18 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL fileExists = [fileManager fileExistsAtPath:_destinationPath.path];
     NSError* error;
-    if (fileExists) {
-        [fileManager removeItemAtPath:_destinationPath.path error:&error];
-    };
-    
-    [downloadTask resume];
+    if (self.useCache && fileExists) {
+        if (_downloadComplete) {
+            _downloadComplete(self.destinationPath,nil);
+        }
+    }else{
+        if (fileExists) {
+            [fileManager removeItemAtPath:_destinationPath.path error:&error];
+        }
+        _session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionDownloadTask* downloadTask = [self.session downloadTaskWithURL:fileURL];
+        [downloadTask resume];
+    }
 }
 
 #pragma mark - NSURLSessionDelegate
@@ -92,7 +97,7 @@
  expectedTotalBytes：该文件数据的总大小
  */
 -(void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes{
-
+    
 }
 /*
  3.下载完成之后调用该方法

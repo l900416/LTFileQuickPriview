@@ -42,31 +42,62 @@
 
 #pragma mark - Instance
 
+/**
+ *  preview local file
+ **/
 +(instancetype) instanceWithFilePath:(NSURL*)filePath{
     LTQuickPreviewViewController* instance = [[LTQuickPreviewViewController alloc] init];
     instance.filePath = filePath;
+    instance.useCache = YES;
     return instance;
 }
 
+/**
+ *  preview online file
+ **/
 +(instancetype) instanceWithFileURL:(NSURL*)fileURL{
     LTQuickPreviewViewController* instance = [[LTQuickPreviewViewController alloc] init];
     instance.fileURL = fileURL;
+    instance.useCache = YES;
     return instance;
 }
 
+/**
+ *  preview file, default cache is used
+ **/
++(instancetype) instanceWithURL:(NSURL*)url{
+    NSString* absoluteUrl = [url absoluteString];
+    if ([absoluteUrl hasPrefix:@"http"]) {
+        return [LTQuickPreviewViewController instanceWithFileURL:url];
+    }else{
+        return [LTQuickPreviewViewController instanceWithFilePath:url];
+    }
+}
+
+/**
+ *  preview file
+ **/
++(instancetype) instanceWithURL:(NSURL*)url useCache:(BOOL)useCache{
+    LTQuickPreviewViewController* instance = [LTQuickPreviewViewController instanceWithURL:url];
+    instance.useCache = useCache;
+    return instance;
+}
+
+//init method
 -(instancetype)init{
     self = [super init];
     if(self){
-        self.viewModel = [[LTQuckPreviewViewModel alloc] init];
+        
         self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openWithOtherApp)];
     }
     return self;
 }
 
 #pragma mark - setup
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.viewModel = [[LTQuckPreviewViewModel alloc] init];
+    self.viewModel.useCache = self.useCache;
     if (_filePath) {//本地文件
         LTQuickPreviewFileType fileType = [self.viewModel fileTypeWithURL:_filePath];
         if (fileType == LTQuickPreviewFileTypeQuickLook) {
@@ -87,7 +118,11 @@
             [self.viewModel downloadFile:_fileURL progress:^(float progress) {
                 NSLog(@"下载进度：%.2f",progress);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.progressView.hidden = NO;
+                    if (progress >= 1.0) {
+                        self.progressView.hidden = YES;
+                    }else{
+                        self.progressView.hidden = NO;
+                    }
                     self.progressView.progress = progress;
                 });
             } destinationPath:^NSURL *{
@@ -216,7 +251,7 @@
 #pragma mark - WebView
 
 -(void)openWebURL:(NSURL*)webURL{
-     [self addProgressView];
+    [self addProgressView];
     
     _webView = [[WKWebView alloc] init];
     _webView.translatesAutoresizingMaskIntoConstraints = NO;

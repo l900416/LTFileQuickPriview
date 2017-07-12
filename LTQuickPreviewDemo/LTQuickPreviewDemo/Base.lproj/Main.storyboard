@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2mM-ci-dpR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2mM-ci-dpR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,63 +21,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-1n-Njg">
+                                <rect key="frame" x="155.5" y="112" width="64" height="30"/>
                                 <state key="normal" title="Web URL"/>
                                 <connections>
                                     <action selector="quickPreviewWebURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrm-ik-ETx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8i-Hn-JgB">
+                                <rect key="frame" x="131.5" y="158" width="112" height="30"/>
                                 <state key="normal" title="Local Document"/>
                                 <connections>
                                     <action selector="quickPreviewLocalQuickLook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lzh-mw-ALx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwb-db-ZDv">
+                                <rect key="frame" x="147.5" y="204" width="80" height="30"/>
                                 <state key="normal" title="Local Video"/>
                                 <connections>
                                     <action selector="quickPreviewLocalVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bra-no-Gin"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxE-Bj-lZP">
+                                <rect key="frame" x="128" y="250" width="119" height="30"/>
                                 <state key="normal" title="Online Document"/>
                                 <connections>
                                     <action selector="quickPreviewWebQuickLook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADj-dA-BWk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-e9-Nr4">
+                                <rect key="frame" x="144" y="342" width="87" height="30"/>
                                 <state key="normal" title="Online Video"/>
                                 <connections>
                                     <action selector="quickPreviewWebVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUc-kx-uEb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shx-as-9Zw">
-                                <state key="normal" title="Nil URL"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iac-uJ-5QV">
+                                <rect key="frame" x="75" y="296" width="225" height="30"/>
+                                <state key="normal" title="Online Document Without Cache"/>
                                 <connections>
-                                    <action selector="quickPreviewWithoutURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CA-Cc-Euw"/>
+                                    <action selector="quickPreviewWebQuickLookWithoutCache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c4U-yt-1IV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="shx-as-9Zw" firstAttribute="top" secondItem="fmJ-e9-Nr4" secondAttribute="bottom" constant="16" id="1yh-sV-JJ4"/>
                             <constraint firstItem="nwb-db-ZDv" firstAttribute="centerX" secondItem="u8i-Hn-JgB" secondAttribute="centerX" id="AuW-2H-oZC"/>
                             <constraint firstItem="J1e-1n-Njg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="F9y-Ov-cME"/>
                             <constraint firstItem="fmJ-e9-Nr4" firstAttribute="centerX" secondItem="J1e-1n-Njg" secondAttribute="centerX" id="MKi-hy-WVt"/>
+                            <constraint firstItem="Iac-uJ-5QV" firstAttribute="top" secondItem="rxE-Bj-lZP" secondAttribute="bottom" constant="16" id="O3M-7d-wCn"/>
                             <constraint firstItem="u8i-Hn-JgB" firstAttribute="centerX" secondItem="J1e-1n-Njg" secondAttribute="centerX" id="UtT-2y-gLJ"/>
                             <constraint firstItem="rxE-Bj-lZP" firstAttribute="centerX" secondItem="J1e-1n-Njg" secondAttribute="centerX" id="bvt-kd-lCc"/>
                             <constraint firstItem="u8i-Hn-JgB" firstAttribute="top" secondItem="J1e-1n-Njg" secondAttribute="bottom" constant="16" id="iWg-Pq-4sm"/>
-                            <constraint firstItem="fmJ-e9-Nr4" firstAttribute="top" secondItem="rxE-Bj-lZP" secondAttribute="bottom" constant="16" id="jPw-9w-AFL"/>
-                            <constraint firstItem="shx-as-9Zw" firstAttribute="centerX" secondItem="J1e-1n-Njg" secondAttribute="centerX" id="pmj-Bs-p3y"/>
+                            <constraint firstItem="Iac-uJ-5QV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lZy-mN-6Uc"/>
                             <constraint firstItem="rxE-Bj-lZP" firstAttribute="top" secondItem="nwb-db-ZDv" secondAttribute="bottom" constant="16" id="pqQ-D0-0dn"/>
                             <constraint firstItem="nwb-db-ZDv" firstAttribute="top" secondItem="u8i-Hn-JgB" secondAttribute="bottom" constant="16" id="r67-Sn-EZR"/>
                             <constraint firstItem="J1e-1n-Njg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sqY-0H-FBn"/>
+                            <constraint firstItem="fmJ-e9-Nr4" firstAttribute="top" secondItem="Iac-uJ-5QV" secondAttribute="bottom" constant="16" id="wcU-kE-qTK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vTD-l8-na5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1034" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xY-Ey-VFn">
