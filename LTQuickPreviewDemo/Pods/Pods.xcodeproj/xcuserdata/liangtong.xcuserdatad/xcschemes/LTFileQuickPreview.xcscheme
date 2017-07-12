@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B12D8C13D8E4A232CFA6640A667E0983'
+               BlueprintIdentifier = 'C8EEF7870E58D0FD9BF913DE554E85F6'
                BlueprintName = 'LTFileQuickPreview'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'LTFileQuickPreview.framework'>
