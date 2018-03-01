@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LTFileQuickPreview"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Support both online and local document & Multi-Media File Preview."
 
   # This description is used to generate tags and improve search results.
