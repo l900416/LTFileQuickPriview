@@ -52,9 +52,9 @@
 }
 
 - (void)downloadFile:(NSURL*)fileURL
-            progress:(void (^)(float progress)) downloadProgress
-     destinationPath:(NSURL * (^)())destinationPath
-            complete:(void (^)(NSURL* filePath,NSError *error))complete{
+            progress:(LTQuckPreviewProgressCallbackBlock) downloadProgress
+     destinationPath:(LTQuckPreviewDestinationPathCallbackBlock)destinationPath
+            complete:(LTQuckPreviewDownloadCompleteCallbackBlock)complete{
     
     self.downloadProgress = downloadProgress;
     self.downloadComplete = complete;

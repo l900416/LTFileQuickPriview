@@ -10,6 +10,10 @@
 
 @interface LTQuckPreviewViewModel : NSObject
 
+typedef void (^LTQuckPreviewProgressCallbackBlock)(float);
+typedef NSURL * (^LTQuckPreviewDestinationPathCallbackBlock)(void);
+typedef void (^LTQuckPreviewDownloadCompleteCallbackBlock)(NSURL*,NSError*);
+
 typedef NS_ENUM(NSInteger, LTQuickPreviewFileType){
     LTQuickPreviewFileTypeQuickLook,    //使用QuickLook预览
     LTQuickPreviewFileTypeVideo,        //使用播放器预览
@@ -34,9 +38,9 @@ typedef NS_ENUM(NSInteger, LTQuickPreviewFileType){
  *  download file
  **/
 - (void)downloadFile:(NSURL*)fileURL
-            progress:(void (^)(float progress)) downloadProgress
-     destinationPath:(NSURL * (^)())destinationPath
-            complete:(void (^)(NSURL* filePath,NSError *error))complete;
+            progress:(LTQuckPreviewProgressCallbackBlock) downloadProgress
+     destinationPath:(LTQuckPreviewDestinationPathCallbackBlock)destinationPath
+            complete:(LTQuckPreviewDownloadCompleteCallbackBlock)complete;
 
 
 @end
