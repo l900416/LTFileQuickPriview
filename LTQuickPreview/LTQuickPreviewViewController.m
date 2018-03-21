@@ -17,6 +17,7 @@
 @interface LTQuickPreviewViewController ()<WKNavigationDelegate,QLPreviewControllerDataSource,UIDocumentInteractionControllerDelegate>
 //UI
 @property (nonatomic, strong) UIButton* shareBtn;
+@property (nonatomic, strong) UIButton* dismissBtn;
 
 @property (nonatomic, strong) LTQuckPreviewViewModel* viewModel;
 //File
@@ -148,6 +149,21 @@
             self.title = @"The URL is required !";
         }
     }
+    
+    if (!self.navigationController) {
+        _dismissBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_dismissBtn setImage:[UIImage imageNamed:@"ic_btn_close_black"] forState:UIControlStateNormal];
+        _dismissBtn.translatesAutoresizingMaskIntoConstraints = NO;
+        [_dismissBtn addTarget:self action:@selector(dismissPreviewController) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_dismissBtn];
+        
+        NSLayoutConstraint* dTop = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeTopMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTopMargin multiplier:1.f constant:10];
+        NSLayoutConstraint* dTrailing = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailingMargin multiplier:1.f constant:-10];
+        NSLayoutConstraint* dWidth = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:60];
+        NSLayoutConstraint* dHeight = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_dismissBtn attribute:NSLayoutAttributeWidth multiplier:1.f constant:0];
+        
+        [NSLayoutConstraint activateConstraints: @[dTop,dTrailing,dWidth,dHeight]];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -174,6 +190,9 @@
     }
 }
 
+-(void)dismissPreviewController{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 #pragma mark - Action
 
 -(void)openWithOtherApp{
