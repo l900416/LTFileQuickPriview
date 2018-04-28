@@ -17,7 +17,6 @@
 @interface LTQuickPreviewViewController ()<WKNavigationDelegate,QLPreviewControllerDataSource,UIDocumentInteractionControllerDelegate>
 //UI
 @property (nonatomic, strong) UIButton* shareBtn;
-@property (nonatomic, strong) UIButton* dismissBtn;
 
 @property (nonatomic, strong) LTQuckPreviewViewModel* viewModel;
 //File
@@ -149,21 +148,6 @@
             self.title = @"The URL is required !";
         }
     }
-    
-    if (!self.navigationController) {
-        _dismissBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_dismissBtn setImage:[UIImage imageNamed:@"ic_btn_close_black"] forState:UIControlStateNormal];
-        _dismissBtn.translatesAutoresizingMaskIntoConstraints = NO;
-        [_dismissBtn addTarget:self action:@selector(dismissPreviewController) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_dismissBtn];
-        
-        NSLayoutConstraint* dTop = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeTopMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTopMargin multiplier:1.f constant:10];
-        NSLayoutConstraint* dTrailing = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeTrailingMargin relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailingMargin multiplier:1.f constant:-10];
-        NSLayoutConstraint* dWidth = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:60];
-        NSLayoutConstraint* dHeight = [NSLayoutConstraint constraintWithItem:_dismissBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_dismissBtn attribute:NSLayoutAttributeWidth multiplier:1.f constant:0];
-        
-        [NSLayoutConstraint activateConstraints: @[dTop,dTrailing,dWidth,dHeight]];
-    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -185,14 +169,17 @@
     }
     
     if (_player) {
+        [_player pause];
+    }
+}
+
+-(void)dealloc{
+    if (_player) {
         [_player replaceCurrentItemWithPlayerItem:nil];
         _player = nil;
     }
 }
 
--(void)dismissPreviewController{
-    [self dismissViewControllerAnimated:true completion:nil];
-}
 #pragma mark - Action
 
 -(void)openWithOtherApp{
@@ -366,15 +353,15 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeLeading
                                                          multiplier:1.f
-                                                           constant:-10]];
+                                                           constant:0]];
     //约束-上
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_qlPreviewVC.view
-                                                          attribute:NSLayoutAttributeTop
+                                                          attribute:NSLayoutAttributeTopMargin
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeTop
+                                                          attribute:NSLayoutAttributeTopMargin
                                                          multiplier:1.f
-                                                           constant:CGRectGetHeight(self.navigationController.navigationBar.bounds)]];
+                                                           constant:0]];
     //约束-右
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_qlPreviewVC.view
                                                           attribute:NSLayoutAttributeTrailing
@@ -382,13 +369,13 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTrailing
                                                          multiplier:1.f
-                                                           constant:10]];
+                                                           constant:0]];
     //约束-下
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_qlPreviewVC.view
-                                                          attribute:NSLayoutAttributeBottom
+                                                          attribute:NSLayoutAttributeBottomMargin
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeBottom
+                                                          attribute:NSLayoutAttributeBottomMargin
                                                          multiplier:1.f
                                                            constant:0]];
 }
@@ -402,15 +389,14 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeLeading
                                                          multiplier:1.f
-                                                           constant:-10]];
+                                                           constant:0]];
     //约束-上
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_playerView.view
-                                                          attribute:NSLayoutAttributeTop
+                                                          attribute:NSLayoutAttributeTopMargin
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.f
-                                                           constant:CGRectGetHeight(self.navigationController.navigationBar.bounds)]];
+                                                          attribute:NSLayoutAttributeTopMargin
+                                                         multiplier:1.f constant:0]];
     //约束-右
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_playerView.view
                                                           attribute:NSLayoutAttributeTrailing
@@ -418,7 +404,7 @@
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeTrailing
                                                          multiplier:1.f
-                                                           constant:10]];
+                                                           constant:0]];
     //约束-下
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_playerView.view
                                                           attribute:NSLayoutAttributeBottom
