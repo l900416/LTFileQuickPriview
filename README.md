@@ -1,4 +1,12 @@
 # LTFileQuickPriview
+
+---
+## [DEPRECATED] You can use https://github.com/liangtongdev/LTxCore instead
+
+> Use **LTxCoreFilePreviewViewController** instead. 
+
+---
+
 Support both online and local document &amp; Multi-Media File Preview. Easy to use. 
 
 ![](https://github.com/l900416/LTFileQuickPriview/blob/master/Screenshots/1.png)
